@@ -292,7 +292,7 @@ q:after {
 }
 
 #about p {
-    font-weigth: thin;
+    font-weight: 100;
     font-size: 0.7rem;
 }
 
@@ -348,7 +348,7 @@ input {
 
 input::placeholder {
     color: var(--black);
-    font-weight: thin;
+    font-weight: 100;
 }
 
 #contact label {
@@ -395,7 +395,7 @@ select {
 }
 
 select::placeholder {
-    font-weight: thin;
+    font-weight: 100;
     color: var(--black);
 }
 
