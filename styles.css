@@ -1,0 +1,717 @@
+/* Paul Richan */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root {
+    --yellow: #f6d64a;
+    --teal: #55bcd5;
+    --purple: #9b26b0;
+    --blue: #499bd2;
+    --dark-gray: #222222;
+    --light-gray: #eaeaea;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+#skip {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--teal);
+    color: var(--white);
+    padding: 0.5rem;
+    z-index: 100;
+}
+
+#skip:focus {
+    top: 0;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+}
+
+h1, h2, h3 {
+    font-family: 'Molle', cursive;
+}
+
+h4, p, q, small, nav, button, form, a {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    background: linear-gradient(-180deg, var(--teal), var(--white));
+}
+
+#logo {
+    display: block;
+    width: 125px;
+    padding: 0.5rem 0;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2, h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+header p {
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+#toggle {
+    display: none;
+}
+
+nav label {
+    padding: 0.7rem 0;
+    width: 150px;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: var(--yellow);
+    color: var(--black);
+    font-size: 0.7rem;
+}
+
+header h1, header p {
+    padding: 0 1rem;
+}
+
+#toggle:checked ~ ul {
+    transform: scaleY(1);
+}
+
+#toggle:checked ~ label {
+    background: var(--black);
+    color: var(--white);
+}
+
+nav h2 {
+    display: none;
+}
+
+nav ul {
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s ease-in-out;
+}
+
+nav li {
+    background: var(--teal);
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+nav li:not(:last-child) {
+    border-bottom: 1px solid var(--black);
+}
+
+nav a {
+    color: var(--black);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: .5rem;
+}
+
+#menu-toggle {
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+
+#intro p {
+    line-height: 1.75;
+    font-weight: 200;
+    padding: 0.5rem 1rem;
+}
+
+#intro h2 {
+    padding: 0 1rem;
+}
+
+/* PLAN */
+
+#plan {
+    background: var(--yellow);
+    padding: 1.5rem 1.8rem;
+}
+
+#plan section {
+    background: var(--teal);
+    border: 2px solid var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#plan section h4 {
+    margin-bottom: 0.8rem;
+}
+
+#plan div {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    margin: 0.8rem 0;
+}
+
+#plan section a {
+    padding: 0 2rem;
+    display: flex;
+}
+
+/* TESTIMONIALS */
+
+#testimonials {
+    padding: 1.5rem 1.8rem;
+}
+
+#testimonials div {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#testimonials div section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+}
+
+#testimonials div section img {
+    width: 60%;
+}
+
+q {
+    text-align: center;
+    font-style: italic;
+}
+
+q:before {
+    content: '"';
+}
+
+q:after {
+    content: '"';
+}
+
+/* ABOUT */
+
+#about {
+    background: var(--blue);
+    padding: 1.5rem 1.8rem;
+}
+
+#about div {
+    display: flex;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+}
+
+#about section {
+    margin: 0.5rem 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: start;
+}
+
+#about img {
+    height: 40px;
+    margin-bottom: 0.5rem;
+}
+
+#about h4 {
+    font-size: 0.8rem;
+}
+
+#about p {
+    font-weigth: thin;
+    font-size: 0.7rem;
+}
+
+/* Contact */
+
+.required {
+    color: var(--purple);
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1.8rem;
+}
+
+#contact h3 {
+    margin-bottom: 1.25rem;
+}
+
+.form-required {
+    font-size: 0.7rem;
+}
+
+#names {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#nums {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+fieldset {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+legend {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+legend, label {
+    font-size: 0.9rem;
+}
+
+input {
+    border: 2px solid var(--purple);
+    padding: 0.7rem 0.3rem;
+    margin-bottom: 10px;
+}
+
+input::placeholder {
+    color: var(--black);
+    font-weight: thin;
+}
+
+#contact label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+input[type="radio"] {
+    display: grid;
+    place-content: center;
+    border: 2px solid var(--purple);
+    color: var(--purple);
+    appearance: none;
+    border-radius: 999px;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 999px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background: var(--purple);
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+select {
+    width: 100%;
+    padding: 0.7rem 0.3rem;
+    border-radius: 0;
+    margin-bottom: 10px;
+    border: 2px solid var(--purple);
+}
+
+select::placeholder {
+    font-weight: thin;
+    color: var(--black);
+}
+
+input[type="submit"] {
+    appearance: none;
+    background: var(--purple);
+    width: 100%;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+input[type="submit"]:active {
+    opacity: 0.5;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 0.75rem 0;
+    background: var(--light-gray);
+    font-weight: 100;
+}
+
+footer a, footer p {
+    font-size: 0.75rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+footer a:active {
+    opacity: 0.5;
+}
+
+@media (min-width: 500px) {
+
+    header p, header h1 {
+        margin-left: 7rem;
+    }
+
+    header h1 {
+        padding-top: 2rem;
+    }
+
+    label[for="toggle"] {
+        display: none;
+    }
+
+    #menu-toggle {
+        position: relative;
+        top: 0;
+    }
+
+    nav {
+        padding-bottom: 2rem;
+    }
+
+    nav ul {
+        transform: scaleY(1);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+        padding: 0 3rem;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    nav li {
+        background: var(--white);
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    nav li:not(:last-child) {
+        border-bottom: 0;
+    }
+
+    #logo {
+        position: absolute;
+        top: 1.5rem;
+    }
+
+    .active {
+        background: var(--yellow);
+    }
+
+    #intro h2, #intro p {
+        padding: 0;
+    }
+
+    #intro {
+        padding: 1rem 3rem;
+    }
+
+    #img-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+    }
+
+    picture {
+        /* span across two grid columns */
+        grid-column: span 2;
+    }
+
+    #plan {
+        padding: 1rem 3rem;
+    }
+
+    #plan div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+    }
+
+    #testimonials {
+        padding: 1rem 3rem;
+    }
+
+    #testimonials div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+    }
+
+    #about {
+        padding: 1rem 3rem;
+    }
+
+    #about div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    #about section {
+        width: 100%;
+    }
+
+    #contact {
+        padding: 1rem 3rem;
+    }
+
+    fieldset {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    input[type="submit"] {
+        width: 40%;
+        justify-self: end;
+    }
+
+    #selects {
+        display: grid;
+    }
+
+    footer {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1200px) {
+    nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    nav li {
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    #intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding: 5rem 7rem;
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
+    #intro h2 {
+        grid-column: 1 / 2;
+        grid-row: 1 / -1;
+    }
+
+    #intro p {
+        grid-column: 1 / 2;
+        grid-row: 2 / -1;
+        margin-top: 3rem;
+    }
+
+    #img-grid {
+        grid-row: 1 / -1;
+        grid-column: 2 / -1;
+    }
+
+    #plan {
+        padding: 5rem 7rem;
+    }
+
+    #plan h3 {
+        max-width: 1920px;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+
+    #plan div {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
+    #plan section {
+        display: grid;
+        justify-content: center;
+    }
+
+    #testimonials {
+        padding: 5rem 7rem;
+    }
+
+    #testimonials h3 {
+        max-width: 1920px;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+
+    #testimonials div {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
+    #about {
+        padding: 5rem 7rem;
+    }
+
+    #about div {
+        width: fit-content;
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 2rem;
+        max-width: 1920px;
+    }
+
+    #about h3 {
+        max-width: 1920px;
+        margin-bottom: 2rem;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    #about img {
+        height: 120px;
+        margin-bottom: 1rem;
+    }
+
+    #contact {
+        padding: 5rem 7rem;
+    }
+
+    #contact h3 {
+        max-width: 1920px;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+
+
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+        align-items: start;
+        /* padding: 0 7rem; */
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
+    .form-required {
+        font-size: 1.5rem;
+    }   
+
+    footer {
+        margin: 0 auto;
+        padding: 3rem 14rem;
+        gap: 3rem;
+    }
+
+    footer a, footer p {
+        font-size: 1rem;
+    }
+
+
+    footer p {
+        flex: 1;
+        text-align: left;
+    }
+
+}
